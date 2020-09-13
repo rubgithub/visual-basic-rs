@@ -243,7 +243,6 @@ Private Sub ButtonResult_Click()
         Expression = Split(Value, "/")
         TextResult.Text = Divide(CInt(Expression(0)), CInt(Expression(1)))
     End If
-    
 End Sub
 
 Private Sub ButtonSubtract_Click()
