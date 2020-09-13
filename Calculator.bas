@@ -1,8 +1,8 @@
 Attribute VB_Name = "Calculator"
-Declare Function FFIDivide Lib "C:\Users\weslenng\visual-basic-rs\target\i686-pc-windows-msvc\release\vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
-Declare Function FFIMultiply Lib "C:\Users\weslenng\visual-basic-rs\target\i686-pc-windows-msvc\release\vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
-Declare Function FFISubtract Lib "C:\Users\weslenng\visual-basic-rs\target\i686-pc-windows-msvc\release\vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
-Declare Function FFISum Lib "C:\Users\weslenng\visual-basic-rs\target\i686-pc-windows-msvc\release\vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
+Declare Function FFIDivide Lib "vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
+Declare Function FFIMultiply Lib "vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
+Declare Function FFISubtract Lib "vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
+Declare Function FFISum Lib "vbrs.dll" (ByVal x As Long, ByVal y As Long) As Long
 
 Function EnsureOperand(ByVal Expression As String) As String
     EnsureOperand = Replace(Replace(Replace(Replace(Expression, "+", ""), "-", ""), "*", ""), "/", "")

@@ -4,6 +4,7 @@ Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\Windows\SysWO
 Module=Calculator; Calculator.bas
 IconForm="CalculatorGUI"
 Startup="CalculatorGUI"
+ExeName32="VBRS.exe"
 Command32=""
 Name="VBRS"
 HelpContextID="0"
