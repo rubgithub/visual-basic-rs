@@ -1,4 +1,4 @@
-[![Microsoft Visual Rust](https://i.imgur.com/AhPU3US.png)](https://github.com/weslenng-labs/visual-basic-rs)
+[![Microsoft Visual Rust](https://i.imgur.com/AhPU3US.png)](https://github.com/nglabo/visual-basic-rs)
 
 A sacrilegious (and for fun) FFI between VB6 and Rust
 
