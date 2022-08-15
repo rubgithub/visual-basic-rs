@@ -4,17 +4,43 @@ Begin VB.Form CalculatorGUI
    BackColor       =   &H80000005&
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Calculator"
-   ClientHeight    =   3765
+   ClientHeight    =   4590
    ClientLeft      =   45
    ClientTop       =   390
    ClientWidth     =   3030
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3765
+   ScaleHeight     =   4590
    ScaleWidth      =   3030
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton ComHash 
+      Appearance      =   0  'Flat
+      Caption         =   "Hash"
+      Height          =   255
+      Left            =   1800
+      TabIndex        =   19
+      Top             =   4200
+      Width           =   1095
+   End
+   Begin VB.TextBox TxtInput 
+      Appearance      =   0  'Flat
+      Height          =   285
+      Left            =   120
+      TabIndex        =   18
+      Top             =   3840
+      Width           =   2775
+   End
+   Begin VB.CommandButton ComCount 
+      Appearance      =   0  'Flat
+      Caption         =   "Str count"
+      Height          =   255
+      Left            =   120
+      TabIndex        =   17
+      Top             =   4200
+      Width           =   1095
+   End
    Begin VB.CommandButton ButtonDelete 
       Appearance      =   0  'Flat
       Caption         =   "C"
@@ -241,6 +267,10 @@ Private Sub ButtonResult_Click()
         TextResult.Text = Multiply(CInt(Expression(0)), CInt(Expression(1)))
     ElseIf InStr(Value, "/") > 0 Then
         Expression = Split(Value, "/")
+        If Expression(1) = 0 Then
+          MsgBox "DIVISION BY ZERO", vbOKOnly + vbCritical, "ERROR"
+          Exit Sub
+        End If
         TextResult.Text = Divide(CInt(Expression(0)), CInt(Expression(1)))
     End If
 End Sub
@@ -255,4 +285,12 @@ Private Sub ButtonSum_Click()
     If TextResult.Text <> "" Then
         TextResult.Text = EnsureOperand(TextResult.Text) + "+"
     End If
+End Sub
+
+Private Sub ComHash_Click()
+  MsgBox TxtInput & vbCrLf & "Hash: " & Hash(TxtInput), vbOKOnly + vbInformation, "RUST DLL"
+End Sub
+
+Private Sub ComCount_Click()
+  MsgBox TxtInput & vbCrLf & "Count: " & CountString(TxtInput), vbOKOnly + vbInformation, "RUST DLL"
 End Sub
